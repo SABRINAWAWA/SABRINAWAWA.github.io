@@ -74,7 +74,12 @@ span{
     color: #FF9999;
 }
 
-h3{
+.section-1-heading{
+    text-align: center;
+    color: #FF9999;
+}
+
+.section-2-heading{
     text-align: center;
     color: #4ab9e6;
 }
