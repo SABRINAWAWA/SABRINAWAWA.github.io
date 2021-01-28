@@ -1,2 +1,0 @@
-# SABRINAWAWA.github.io
-CCSF CNIT CLASSES
