@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT 133 Homework 2 - Basic Operations</title>
+
+    <style>
+        body {
+            background-color: #feeafa;
+        }
+
+        .body {
+            background-color: #efd3d7;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        table {
+            background-color: #dee2ff;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div {
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links {
+            background-color: #dee2ff;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .links td {
+            background-color: #8e9aaf;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: #fefae0;
+            text-decoration: none;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script>
+        function process() {
+            var number1, number2, number3, number4, number5, num1, num2, num3, num4, num5;
+            var posNum = 0;
+            var negNum = 0;
+            var zeroNum = 0;
+            var numArray = [];
+            number1 = document.forms["numberForm"].elements["number1"].value;
+            number2 = document.forms["numberForm"].elements["number2"].value;
+            number3 = document.forms["numberForm"].elements["number3"].value;
+            number4 = document.forms["numberForm"].elements["number4"].value;
+            number5 = document.forms["numberForm"].elements["number5"].value;
+            num1 = parseInt(number1);
+            num2 = parseInt(number2);
+            num3 = parseInt(number3);
+            num4 = parseInt(number4);
+            num5 = parseInt(number5);
+            if (Number.isInteger(num1) && Number.isInteger(num2) && Number.isInteger(num3) && Number.isInteger(num4) && Number.isInteger(num5)) {
+                numArray.push(num1);
+                numArray.push(num2);
+                numArray.push(num3);
+                numArray.push(num4);
+                numArray.push(num5);
+                numArray.forEach(function (item, index, array) {
+                    if (item === 0) {
+                        zeroNum++;
+                    } else if (item >= 0) {
+                        posNum++;
+                    } else {
+                        negNum++;
+                    }
+                })
+                document.getElementById("results").innerHTML = ("The five numbers are " + num1 + ", " + num2 + ", " + num3 + ", " + num4 + ", " + num5 + ". " + "<br> The number of positive numbers is " + posNum + ". <br> The number of zero is " + zeroNum +
+                    ". <br> The number of negative number is " + negNum + ".");
+            } else {
+                document.getElementById("results").innerHTML = ("ERROR! Please enter five NUMBERS in the above input boxes!");
+            }
+        }
+
+        function res() {
+            document.getElementById("results").innerHTML = (" ");
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT 133 Homework 2-Part 3</h1>
+        <h2>Please Enter Five Numbers and Click Submit</h2>
+        <p>The result section will display the number of positive numbers, zero, and negative numbers of these five numbers.</p>
+        <form id="numberForm" name="numberForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>First Number: </td>
+                        <td><input type="text" name="number1" size="10" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Second Number: </td>
+                        <td><input type="text" name="number2" size="10" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Third Number: </td>
+                        <td><input type="text" name="number3" size="10" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Fourth Number: </td>
+                        <td><input type="text" name="number4" size="10" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Fifth Number: </td>
+                        <td><input type="text" name="number5" size="10" onfocus="this.value=''"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+        <div>
+            <input type="button" onclick="process()" value="SUBMIT" id="unfade">
+            <input type="reset" onclick="res()" value="RESET">
+
+        </div>
+        <h2>Results </h2>
+        <div class="results" id="results" style="width:250px;height:120px;background-color:#cbc0d3;">
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 2</h4>
+        <table>
+            <tr>
+                <td><a href="CNIT133HW2.html">Homework 2</a></td>
+                <td><a href="CNIT133HW2P1.html">Homework 2 Part 1</a></td>
+                <td><a href="CNIT133HW2P2.html">Homework 2 Part 2</a></td>
+                <td><a href="CNIT133HW2P4.html">Homework 2 Part 4</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

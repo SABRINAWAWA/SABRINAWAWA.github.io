@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT 133 Homework 2 - Basic Operations</title>
+
+    <style>
+        body {
+            background-color: #05668d;
+        }
+
+        .body {
+            background-color: #028090;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        table {
+            background-color: #f0f3bd;
+            text-align: center;
+            align-content: center;
+            padding: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .exchangeRates,
+        .exchangeRates td {
+            border: 1px solid black;
+            padding: 1rem;
+        }
+
+        div {
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links {
+            background-color: #028090;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .links td {
+            background-color: #02c39a;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #02c39a;
+            border: solid 1px #05668d;
+            border-radius: 1rem;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+
+        h4{
+            padding-top: 1rem;
+        }
+
+        h1, h2, h4, p{
+            color:#f0f3bd;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+    <script>
+        function process() {
+            var usMoney, usMon, euroMon, canadaMon, hkMon, japMon, mexMon;
+            usMoney = document.forms["numberForm"].elements["usMoney"].value;
+            usMon = parseFloat(usMoney);
+            console.log(usMon);
+            if (Number(usMon) == usMon&&usMon>0) {
+                euroMon = parseFloat(usMon * 0.89).toFixed(2);
+                canadaMon = parseFloat(usMon * 1.31).toFixed(2);
+                hkMon = parseFloat(usMon * 7.8).toFixed(2);
+                japMon = parseFloat(usMon * 108.38).toFixed(2);
+                mexMon = parseFloat(usMon * 19.11).toFixed(2);
+                document.getElementById("euro").innerHTML = euroMon;
+                document.getElementById("canadian").innerHTML = canadaMon;
+                document.getElementById("hkdollar").innerHTML = hkMon;
+                document.getElementById("japanYen").innerHTML = japMon;
+                document.getElementById("MexPeso").innerHTML = mexMon;
+
+            } else {
+                document.getElementById("flip").innerHTML = ("ERROR! Please enter a POSITIVE NUMBER in the above input box!");
+            }
+        }
+
+        function res() {
+            document.getElementById("results").innerHTML = (" ");
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT 133 Homework 2-Part 3</h1>
+        <h2>Please Enter The Amount of U.S. Dollar You Want To Exchange and Click Submit</h2>
+        <p>The result section will display a series of exchange ratio and value of different currency. Click on the title of 'Monetary Exchange Rates' to expand the table.</p>
+        <form id="numberForm" name="numberForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Enter An Amount in U.S. Dollar: </td>
+                        <td><input type="text" name="usMoney" size="10" onfocus="this.value=''"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+
+        <div>
+            <input type="button" onclick="process()" value="SUBMIT">
+            <input type="reset" onclick="res()" value="RESET">
+        </div>
+
+        <div id="flip">Monetary Exchange Rates</div>
+        <div id="panel">
+            <table class="exchangeRates">
+                <tr>
+                    <td><strong>Currency</strong>
+
+                    </td>
+                    <td><strong>Rate</strong>
+
+                    </td>
+                    <td><strong>Value</strong>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Euro</td>
+                    <td>0.89</td>
+                    <td id="euro"></td>
+                </tr>
+                <tr>
+                    <td>Canadian Dollar</td>
+                    <td>1.31</td>
+                    <td id="canadian"></td>
+                </tr>
+                <tr>
+                    <td>Hong Kong Dollar</td>
+                    <td>7.80</td>
+                    <td id="hkdollar"></td>
+                </tr>
+                <tr>
+                    <td>Japanese Yen</td>
+                    <td>108.38</td>
+                    <td id="japanYen"></td>
+                </tr>
+                <tr>
+                    <td>Mexican Peso</td>
+                    <td>19.11</td>
+                    <td id="MexPeso"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 2</h4>
+        <table>
+            <tr>
+                <td><a href="CNIT133HW2.html">Homework 2</a></td>
+                <td><a href="CNIT133HW2P1.html">Homework 2 Part 1</a></td>
+                <td><a href="CNIT133HW2P2.html">Homework 2 Part 2</a></td>
+                <td><a href="CNIT133HW2P3.html">Homework 2 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
