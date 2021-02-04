@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #495867;
+}
+
+header{
+    background-color: #faf9f9;
+    color: black;
+    text-align: center;
+    font-family: Potta One, sans-serif;
+    padding: 10px;
+}
+
+section{
+    background-color: #577399;
+    margin: 30px;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 10px;
+    font-family: Roboto Slab, sans-serif;
+}
+
+#title{
+    background-color: #fe5f55;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+}
+
+#title>a:hover{
+    background-color:white;
+    color:#fe5f55;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+p{
+    background-color: #bdd5ea;
+    padding: 10px;
+    margin: 10px 30px;
+    border-radius: 10px;
+}
+
+div{
+    background-color: #bdd5ea;
+    padding: 0px 30px;
+    margin: 30px 30px;
+    border-radius: 10px;
+}
+
+li {
+    padding: 5px 0;
+}
+
+img{
+    height: 400px;
+    width: 600px;
+}
+
+h4{
+    padding: 5px;
+    font-family: Potta One, sans-serif;
+    text-align: center;
+    color: #fe5f55;
+}
+
+#gamelink{
+    text-align: center;
+    color: #fe5f55;
+    background-color: ivory;
+    box-shadow: 2px 2px 4px rgb(250, 231, 230);
+}
+
+#gamelink:hover{
+    background-color: tomato;
+    color: white;
+    box-shadow: 2px 2px 4px rgb(250, 231, 230);
+}
