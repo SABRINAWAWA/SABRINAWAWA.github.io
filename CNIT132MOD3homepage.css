@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+body{
+    background-color: #edddd4;
+}
+
+h1, h2{
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+    font-family: Reggae One, serif;
+}
+
+h1{
+    color:#197278;
+}
+
+h2{
+    color:#c44536;
+}
+
+span{
+    color:#c44536;
+    font-weight: bold;
+}
+
+.card{
+    padding: 5px;
+    margin: 15px;
+}
+
+.card-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Satisfy, serif;
+}
+
+.card-text{
+    font-size: 15px;
+    font-family: Dosis, serif;
+}
+
+li{
+    font-size: 15px;
+    font-family: Dosis, serif;
+}
+footer{
+    text-align: center;
+    font-size: 15px;
+    font-family: Dosis, serif;
+    color: white;
+    background-color: #197278;
+}
+
+.menu-card-header{
+    text-align: center;
+}
