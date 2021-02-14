@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW3 Part 4</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lexend+Mega&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f6f4d2;
+            font-size: 15px;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 700px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        p {
+            margin: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        input {
+            text-align: left;
+        }
+
+        .heading {
+            background-color: #f19c79;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: bold;
+            color: #cc444b;
+            margin-top: 20px;
+        }
+
+        .startPanel {
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            background-image: linear-gradient(#00a8979c, #f0f3bd);
+            border: 1px solid #00a8979c;
+            border-radius: 5px;
+        }
+
+        .message {
+            font-family: 'Indie Flower', cursive;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #ffd500a6;
+        }
+
+        div {
+            margin: 10px auto;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        var correctAns, firstNum, secondNum, inputAns;
+        function displayQuestion() {
+            firstNum = Math.floor(Math.random() * 9);
+            secondNum = Math.floor(Math.random() * 9);
+            document.getElementById("question").innerHTML = ("How much is " + firstNum + " times " + secondNum + "?")
+            document.getElementById("startPanel").style.visibility = "hidden";
+            document.getElementById("playAgainPanel").style.visibility = "hidden";
+            document.getElementById("message").innerHTML = ("");
+        }
+
+        function checkAnswer() {
+            inputAns = document.getElementById("answer").value;
+            var inputAnsInt = parseInt(inputAns);
+            correctAns = firstNum * secondNum;
+            if (Number.isInteger(inputAnsInt)) {
+                if (inputAnsInt === correctAns) {
+                    document.getElementById("message").innerHTML = ("Correct! Do you want to answer anther question?");
+                    document.getElementById("playAgainPanel").style.visibility = "visible";
+                } else {
+                    document.getElementById("message").innerHTML = ("Incorrect! Please try again!");
+                }
+            } else {
+                document.getElementById("message").innerHTML = ("Please enter a valid number!");
+            }
+        }
+
+        function end() {
+            document.getElementById("message").innerHTML = ("Goodbye and Thanks!");
+            document.getElementById("playAgainPanel").style.visibility = "hidden";
+            document.getElementById("startPanel").style.visibility = "visible";
+            document.getElementById("question").innerHTML = "";
+            document.getElementById("answer").value = '';
+        }
+
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <div class="heading">
+            <h1>Extra Credit: Calculation</h1>
+            <h3>CNIT133 Homework 3 Part 4</h3>
+        </div>
+
+        <p>When you ready, click start button to start answering questions. <br>
+            You will keep answering one question until you get it right.<br>
+            After entering correct answer, you can choose to continue or stop practicing. </p>
+
+        <div class="question" id="question">
+
+        </div>
+
+        <div class="startPanel" id="startPanel">
+            <h2>Are you Ready?</h2>
+            <input type="button" onclick="displayQuestion()" value="Start">
+        </div>
+
+        <form name="answerForm" id="answerForm">
+            <label for="answer">Enter your answer: </label>
+            <input type="number" name="answer" id="answer" onfocus="this.value=''">
+        </form>
+
+        <div>
+            <input type="button" onclick="checkAnswer()" value="SUBMIT">
+        </div>
+
+        <div class="message" id="message">
+
+        </div>
+        <div class="playAgainPanel" id="playAgainPanel" style="visibility: hidden;">
+            <input type="button" onclick="displayQuestion()" value="Yes">
+            <input type="button" onclick="end()" value="No">
+        </div>
+
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 3</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW3.html">Homework 3</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P1.html">Homework 3 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P2.html">Homework 3 Part 2</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P3.html">Homework 3 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

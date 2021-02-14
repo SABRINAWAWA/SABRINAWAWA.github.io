@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW3 Part 2</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <style>
+        body {
+            background-color: #f6f4d2;
+            font-size: 15px;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 700px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        p {
+            margin: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        #tip{
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        .heading {
+            background-color: #f19c79;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        form {
+            text-align: center;
+            padding: 3px;
+            width: 350px;
+            margin-left: 100px;
+        }
+
+        #myItemForm {
+            margin-left: 200px;
+        }
+
+        .error {
+            font-size: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        function process() {
+            var item1, item2, item3, item4, item1Int, item2Int, item3Int, item4Int, item1Total, item2Total, item3Total, item4Total, totalSold, weeklyEarnings;
+            item1 = document.forms["myItemForm"].elements["item1"].value;
+            item2 = document.forms["myItemForm"].elements["item2"].value;
+            item3 = document.forms["myItemForm"].elements["item3"].value;
+            item4 = document.forms["myItemForm"].elements["item4"].value;
+            item1Int = parseInt(item1);
+            item2Int = parseInt(item2);
+            item3Int = parseInt(item3);
+            item4Int = parseInt(item4);
+            if (Number.isInteger(item1Int) && Number.isInteger(item2Int) && Number.isInteger(item3Int) && Number.isInteger(item4Int)) {
+                if (item1Int >= 0 && item2Int >= 0 && item3Int >= 0 && item4Int >= 0) {
+                    item1Total = (20.99 * item1Int);
+                    item2Total = (12.75 * item2Int);
+                    item3Total = (9.95 * item3Int);
+                    item4Total = (35.89 * item4Int);
+                    totalSold = item1Total + item2Total + item3Total + item4Total;
+                    weeklyEarnings = 0.09 * totalSold + 250;
+                    document.getElementById("item1Sold").value = item1Int;
+                    document.getElementById("item2Sold").value = item2Int;
+                    document.getElementById("item3Sold").value = item3Int;
+                    document.getElementById("item4Sold").value = item4Int;
+                    document.getElementById("item1Total").value = item1Total.toFixed(2);
+                    document.getElementById("item2Total").value = item2Total.toFixed(2);
+                    document.getElementById("item3Total").value = item3Total.toFixed(2);
+                    document.getElementById("item4Total").value = item4Total.toFixed(2);
+                    document.getElementById("totalSold").value = totalSold.toFixed(2);
+                    document.getElementById("weeklyEarnings").value = weeklyEarnings.toFixed(2);
+                } else {
+                    document.getElementById("error").innerHTML = ("ERROR! Please enter a positive number for sold item!");
+                }
+            } else {
+                document.getElementById("error").innerHTML = ("ERROR! Please enter numbers of sold items for all four items!");
+            }
+        }
+
+        function res() {
+            document.getElementById("error").innerHTML = ("");
+            document.getElementById("item1Sold").value = "";
+            document.getElementById("item2Sold").value = "";
+            document.getElementById("item3Sold").value = "";
+            document.getElementById("item4Sold").value = "";
+            document.getElementById("item1Total").value = "";
+            document.getElementById("item2Total").value = "";
+            document.getElementById("item3Total").value = "";
+            document.getElementById("item4Total").value = "";
+            document.getElementById("totalSold").value = "";
+            document.getElementById("weeklyEarnings").value = "";
+        }
+
+        $(function () {
+            $(document).tooltip();
+        });
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <div class="heading">
+            <h1>Weekly Payment</h1>
+            <h3>CNIT133 Homework 3 Part 2</h3>
+        </div>
+
+        <p id="tip"><i>Please enter your name and the number of items sold in the below input box to get your total weekly earnings.
+        </i></p>
+
+        <p><label for="name">Salesperson: </label><input type="text" name="name"
+                title="Please make sure that the salesperson's name is spelled correctly" size="8"
+                onfocus="this.value=''">
+        </p>
+
+        <h3 style="background-color: #ffd500a6;">Input the number of items sold for each item number:</h3>
+
+        <form id="myItemForm" name="myItemForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Item 1: </td>
+                        <td><input type="number" name="item1" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Item 2: </td>
+                        <td><input type="number" name="item2" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Item 3: </td>
+                        <td><input type="number" name="item3" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Item 4: </td>
+                        <td><input type="number" name="item4" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <div>
+            <input type="button" onclick="process()" value="SUBMIT">
+            <input type="reset" onclick="res()" value="RESET">
+        </div>
+
+        <div class="error" id="error">
+        </div>
+        <hr>
+
+        <form id="resultForm" name="resultForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Item #</th>
+                        <th>Price</th>
+                        <th>Number Sold</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>1 </td>
+                        <td>$20.99</td>
+                        <td><input type="number" name="item1Sold" id="item1Sold" size="5" readonly></td>
+                        <td><input type="number" name="item1Total" id="item1Total" size="5" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td>$12.75</td>
+                        <td><input type="number" name="item2Sold" id="item2Sold" size="5" readonly></td>
+                        <td><input type="number" name="item2Total" id="item2Total" size="5" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td>$9.95</td>
+                        <td><input type="number" name="item3Sold" id="item3Sold" size="5" readonly></td>
+                        <td><input type="number" name="item3Total" id="item3Total" size="5" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td>$35.89</td>
+                        <td><input type="number" name="item4Sold" id="item4Sold" size="5" readonly></td>
+                        <td><input type="number" name="item4Total" id="item4Total" size="5" readonly></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total Amount Sold: </td>
+                        <td><input type="number" name="totalSold" id="totalSold" size="5" readonly></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total Weekly Earnings: </td>
+                        <td><input type="number" name="weeklyEarnings" id="weeklyEarnings" size="5" readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 3</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW3.html">Homework 3</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P1.html">Homework 3 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P3.html">Homework 3 Part 3</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P4.html">Homework 3 Part 4</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

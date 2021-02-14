@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW3 Part 3</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f6f4d2;
+            font-size: 15px;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 700px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        p {
+            margin: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        #tip {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        .heading {
+            background-color: #f19c79;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        div {
+            margin: 0 auto;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        function convertCtoF() {
+            var temperature, tempFloat, farenheitDeg;
+            temperature = document.getElementById("temperature").value;
+            tempFloat = parseFloat(temperature);
+            if (!Number.isNaN(tempFloat)) {
+                farenheitDeg = (9 / 5 * temperature) + 32;
+                document.getElementById("results").innerHTML = (temperature + "C is " + farenheitDeg.toFixed(2) + "F");
+            } else {
+                document.getElementById("results").innerHTML = ("Error! Please enter a valid number.");
+            }
+        }
+
+        function converFtoC() {
+            var temperature, tempFloat, celsiusDeg;
+            temperature = document.getElementById("temperature").value;
+            tempFloat = parseFloat(temperature);
+            if (!Number.isNaN(tempFloat)) {
+                celsiusDeg = 5 / 9 * (tempFloat - 32);
+                document.getElementById("results").innerHTML = (temperature + "F is " + celsiusDeg.toFixed(2) + "C");
+            } else {
+                document.getElementById("results").innerHTML = ("Error! Please enter a valid number.");
+            }
+        }
+
+        function res() {
+            document.getElementById("results").innerHTML = ("");
+        }
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <div class="heading">
+            <h1>Tempature Conversion</h1>
+            <h3>CNIT133 Homework 3 Part 3</h3>
+        </div>
+
+        <p id="tip">You can use 'Convert to Farenheit' button to convert the temperature from Celsius to Farenheit. <br>
+            You can use 'Convert to Celsius' button to convert the temperature from Farenheit to Celsius.</p>
+
+        <p><label for="temperature" style="background-color: #ffd500a6;">Enter the temperature you want to convert: </label><input type="number"
+                name="temperature" id="temperature" onfocus="this.value=''">
+        </p>
+
+        <div>
+            <input type="button" onclick="convertCtoF()" value="Convert to Farenheit">
+            <input type="button" onclick="converFtoC()" value="Convert to Celsius">
+            <input type="reset" onclick="res()" value="RESET">
+        </div>
+
+        <h3>Results: </h3>
+
+        <div class="results" id="results" style="width:500px;height:50px;background-color:#f19c79;">
+
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 3</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW3.html">Homework 3</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P1.html">Homework 3 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P2.html">Homework 3 Part 2</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P4.html">Homework 3 Part 4</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

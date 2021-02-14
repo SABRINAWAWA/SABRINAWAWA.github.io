@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW3 Part 1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f6f4d2;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        .heading {
+            background-color: #f19c79;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 3px;
+        }
+
+        h3{
+            font-size: 15px;
+        }
+
+        p{
+            font-size: 13px;
+        }
+
+        #tip{
+            background-color: #ffd500a6;
+            padding:5px
+        }
+        form{
+            text-align: center;
+            font-weight: bold;
+            color:#a73020;
+            padding: 3px;
+        }
+
+        .results{
+            padding:5px;
+            font-size: 15px;
+        }
+
+        .warning{
+            padding:5px;
+            font-size: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        function process() {
+            var hwAvg, midExam, finalExam, participation, finalAvg, hwAvgInt, midExamInt, finalExamInt, participationInt, finalLetterGrade;
+            hwAvg = document.forms["myForm"].elements["hwAvg"].value;
+            midExam = document.forms["myForm"].elements["midExam"].value;
+            finalExam = document.forms["myForm"].elements["finalExam"].value;
+            participation = document.forms["myForm"].elements["participation"].value;
+            hwAvgInt = parseInt(hwAvg);
+            midExamInt = parseInt(midExam);
+            finalExamInt = parseInt(finalExam);
+            participationInt = parseInt(participation);
+            if (Number.isInteger(hwAvgInt) && Number.isInteger(midExamInt) && Number.isInteger(finalExamInt) && Number.isInteger(participationInt)) {
+                if (hwAvgInt > 0 && hwAvgInt <= 100 && midExamInt > 0 && midExamInt <= 100 && finalExamInt > 0 && finalExamInt <= 100 && participationInt > 0 && participationInt <= 100) {
+                    finalAvg = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation));
+                    if (finalAvg <= 100 && finalAvg >= 90) {
+                        finalLetterGrade = 'A';
+                    } else if (finalAvg < 90 && finalAvg >= 80) {
+                        finalLetterGrade = 'B';
+                    } else if (finalAvg < 80 && finalAvg >= 70) {
+                        finalLetterGrade = 'C';
+                    } else if (finalAvg < 70 && finalAvg >= 60) {
+                        finalLetterGrade = 'D';
+                    } else {
+                        finalLetterGrade = 'F';
+                    }
+                    document.getElementById("results").innerHTML = ("Your final Average is " + finalAvg + ". <br> Your letter grade is " + finalLetterGrade + ". ");
+                    if (finalLetterGrade === 'D' || finalLetterGrade === 'F') {
+                        document.getElementById("warning").innerHTML = ("Student must retake the course.");
+                    }else{
+                        document.getElementById("warning").innerHTML = ("");
+                    }
+                } else {
+                    document.getElementById("results").innerHTML = ("ERROR! Please enter scores that are larger than 0 and smaller or equal to 100.");
+                }
+            } else {
+                document.getElementById("results").innerHTML = ("ERROR! Please enter your homework average, mid-term exam score, final exam score, and participation as NUMBERS in the above input boxes!");
+            }
+        }
+
+        function res() {
+            document.getElementById("results").innerHTML = ("");
+            document.getElementById("warning").innerHTML = ("");
+        }
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <div class="heading">
+            <h1>Student Grades</h1>
+            <h3>CNIT133 Homework 3 Part 1</h3>
+        </div>
+        <p>You can enter your homework average, mid-term exam score, final exam score, and participation to calculate
+            the final average and final letter grade.</p>
+        <p id="tip">Please enter scores between 0 and 100.</p>
+
+        <form id="myForm" name="myForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Homework Average: </td>
+                        <td><input type="number" name="hwAvg" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Mid-term Exam Score: </td>
+                        <td><input type="number" name="midExam" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Final Exam Score: </td>
+                        <td><input type="number" name="finalExam" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td>Participation: </td>
+                        <td><input type="number" name="participation" size="8" onfocus="this.value=''"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <div>
+            <input type="button" onclick="process()" value="SUBMIT" id="unfade">
+            <input type="reset" onclick="res()" value="RESET">
+        </div>
+
+        <h2>Final Grade: </h2>
+        <div class="results" id="results" style="width:500px;height:50px;background-color:#f19c79;">
+        </div>
+        <div class="warning" id="warning" style="width:500px;height:50px;background-color:#f19c79;color:#f6f4d2">
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 3</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW3.html">Homework 3</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P2.html">Homework 3 Part 2</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P3.html">Homework 3 Part 3</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW3P4.html">Homework 3 Part 4</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
