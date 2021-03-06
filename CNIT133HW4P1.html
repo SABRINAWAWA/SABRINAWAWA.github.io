@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW4 Part 1</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f6f4d2;
+            margin: 20px auto;
+            text-align: center;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        .results {
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW4 Part 1</h1>
+        <p>Calculates the product and sum of every fourth integer from 5 to 25 inclusive.</p>
+        <div class="results" id="results" style="height:50px;background-color:#f19c79;text-align: center;">
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 4</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW4.html">Homework 4</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW4P2.html">Homework 4 Part 2</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW4P3.html">Homework 4 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+
+    
+    <script>
+        function calculate() {
+            var sum = 0; var product = 1;
+            for (var i = 1; i <= 25; i = i + 4) {
+                sum += i;
+                product *= i;
+            }
+            document.getElementById("results").innerHTML = ("5 * 9 * 13 * 17 * 21 * 25 =" + product + ". <br> 5 + 9 + 13 + 17 + 21 + 25= " + sum + ". ");
+        }
+
+        calculate()
+    </script>
+</body>
+
+</html>

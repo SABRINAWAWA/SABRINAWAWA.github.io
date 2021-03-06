@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW4 Part 2</title>
+
+    <style>
+        body {
+            background-color: #f6f4d2;
+            margin: 20px auto;
+            text-align: center;
+            font-family: 'Lexend Mega', sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        .results {
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        table {
+            text-align: center;
+            padding: 3px;
+            width: 350px;
+            background-color: cornsilk;
+        }
+
+        table thead:first-child tr {
+            background-color: maroon;
+        }
+
+        table>tbody>:nth-child(n){
+            background-color:palevioletred ;
+        }
+
+        table>tbody>:nth-child(2n){
+            background-color:orange ;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW4 Part 2</h1>
+        <p> Calculate compound interest on a principal of $1000 for interest rates of 5, 6, and 7%, for years 1 through
+            10.</p>
+        <div class="results">
+            <h3>Amount on Desposit When Interest Rate is 5%</h3>
+            <table class="005interest">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Amount on deposit</th>
+                        <th>Interest Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 </td>
+                        <td id="amt1"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td id="amt2"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td id="amt3"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td id="amt4"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td id="amt5"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>6 </td>
+                        <td id="amt6"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>7 </td>
+                        <td id="amt7"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>8 </td>
+                        <td id="amt8"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>9 </td>
+                        <td id="amt9"></td>
+                        <td>0.05</td>
+                    </tr>
+                    <tr>
+                        <td>10 </td>
+                        <td id="amt10"></td>
+                        <td>0.05</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Amount on Desposit When Interest Rate is 6%</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Amount on deposit</th>
+                        <th>Interest Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 </td>
+                        <td id="6%amt1"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td id="6%amt2"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td id="6%amt3"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td id="6%amt4"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td id="6%amt5"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>6 </td>
+                        <td id="6%amt6"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>7 </td>
+                        <td id="6%amt7"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>8 </td>
+                        <td id="6%amt8"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>9 </td>
+                        <td id="6%amt9"></td>
+                        <td>0.06</td>
+                    </tr>
+                    <tr>
+                        <td>10 </td>
+                        <td id="6%amt10"></td>
+                        <td>0.06</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Amount on Desposit When Interest Rate is 7%</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Amount on deposit</th>
+                        <th>Interest Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 </td>
+                        <td id="7%amt1"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td id="7%amt2"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td id="7%amt3"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td id="7%amt4"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td id="7%amt5"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>6 </td>
+                        <td id="7%amt6"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>7 </td>
+                        <td id="7%amt7"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>8 </td>
+                        <td id="7%amt8"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>9 </td>
+                        <td id="7%amt9"></td>
+                        <td>0.07</td>
+                    </tr>
+                    <tr>
+                        <td>10 </td>
+                        <td id="7%amt10"></td>
+                        <td>0.07</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 4</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW4.html">Homework 4</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW4P1.html">Homework 4 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW4P3.html">Homework 4 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+
+    <script>
+        function calculate_Interest_5() {
+            var interest = 0.05; var principal = 1000; var amount = 0;
+            year = ['amt1', 'amt2', 'amt3', 'amt4', 'amt5', 'amt6', 'amt7', 'amt8', 'amt9', 'amt10']
+            for (var i = 1; i <= 10; i++) {
+                amount = principal * (1 + interest) ** i;
+                console.log(amount);
+                document.getElementById(year[i - 1]).innerHTML = amount.toFixed(2);
+            }
+        }
+
+        function calculate_Interest_6() {
+            var interest = 0.06; var principal = 1000; var amount = 0;
+            year = ['6%amt1', '6%amt2', '6%amt3', '6%amt4', '6%amt5', '6%amt6', '6%amt7', '6%amt8', '6%amt9', '6%amt10']
+            for (var i = 1; i <= 10; i++) {
+                amount = principal * (1 + interest) ** i;
+                console.log(amount);
+                document.getElementById(year[i - 1]).innerHTML = amount.toFixed(2);
+            }
+        }
+
+        function calculate_Interest_7() {
+            var interest = 0.07; var principal = 1000; var amount = 0;
+            year = ['7%amt1', '7%amt2', '7%amt3', '7%amt4', '7%amt5', '7%amt6', '7%amt7', '7%amt8', '7%amt9', '7%amt10']
+            for (var i = 1; i <= 10; i++) {
+                amount = principal * (1 + interest) ** i;
+                console.log(amount);
+                document.getElementById(year[i - 1]).innerHTML = amount.toFixed(2);
+            }
+        }
+        calculate_Interest_5();
+        calculate_Interest_6();
+        calculate_Interest_7()
+    </script>
+</body>
+
+</html>

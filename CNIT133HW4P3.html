@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW4 Part 3</title>
+
+    <style>
+        body {
+            background-color: #f6f4d2;
+            margin: 20px auto;
+            font-family: monospace, sans-serif;
+        }
+
+        .body {
+            background-color: #d4e09b;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h3 {
+            font-size: 15px;
+        }
+
+        .results {
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #f19d7973;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: #d0e099fd;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        function process() {
+            var size = document.forms["myForm"].elements["mysize"].value;
+            var char = "* ";
+            var space = "\u00A0\u00A0";
+            var line = "";
+            var result = document.getElementById("results");
+            if (size > 1 && size < 11) {
+                for (var a = 1; a <= size; a++) {
+                    if (a == 1 || a == size) {
+                        for (var i = 1; i <= size; i++) {
+                            result.innerHTML += char;
+                        }
+                    } else {
+                        for (var i = 1; i <= size; i++) {
+                            if (i == 1 || i == size) {
+                                result.innerHTML += char;
+                            } else {
+                                result.innerHTML += space;
+                            }
+                        }
+                    }
+                    result.innerHTML += "<br>";
+                }
+            }else{
+                result.innerHTML = "Error! Please enter box size between 2 and 10.";
+            }
+        }
+
+        function reset() {
+            document.getElementById("results").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW4 Part 3</h1>
+        <p> Please enter the size of the side of a square (between 2 and 10)</p>
+        <form id="myForm" name="myForm">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Enter Size: </td>
+                        <td><input type="number" name="mysize" onfocus="this.value=''"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <div>
+            <input type="button" onclick="process()" value="SUBMIT" id="unfade">
+            <input type="reset" onclick="reset()" value="RESET">
+        </div>
+        <h3>Output:</h3>
+        <div class="results" id="results" style="width:450px;height:250px;background-color:#f19c79;">
+        </div>
+    </section>
+
+    <section class="links">
+        <h4>Links To Other Parts of Homework 4</h4>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW4.html">Homework 4</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW4P1.html">Homework 4 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW4P2.html">Homework 4 Part 2</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
