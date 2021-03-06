@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a improved version of homework2.html">
+    <title>HTML5</title>
+    <style>
+        body {
+            background-color: yellow;
+        }
+
+        span {
+            font-weight: bold;
+            font-size: 40px;
+            font-style: italic;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .redspan {
+            color: red;
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h2 {
+            color: blue;
+            font-style: italic;
+            text-align: right;
+        }
+
+        .endOfEx {
+            font-size: 50px;
+        }
+
+        a {
+            color: red;
+        }
+
+        h3{
+            color:red;
+            text-align: right;
+        }
+
+        table{
+            background-color: cyan;
+            text-align: center;
+            border-spacing: 10px;
+            border-collapse: separate;
+            animation-name: changeColor;
+            animation-duration: 10s;
+            animation-delay: 1s;
+        }
+
+        td{
+            padding: 10px;
+        }
+
+        @keyframes changeColor{
+            from{background-color: cyan;color:black;}
+            to{background-color: green;color:white;}
+        }
+
+        div{
+            height: 60px;
+            width: 80px;
+            top: 60px;
+            background-color: burlywood;
+            border: cornsilk;
+            border-radius: 5px;
+            text-align: center;
+            position:absolute;
+            animation: moveBanner 10s ease-out 2s infinite;
+        }
+
+        @keyframes moveBanner {
+            0%{left:0;}
+            50%{left:100%}
+            100%{left:0;}
+        }
+    </style>
+</head>
+
+<body>
+    <h1>This is the first heading</h1>
+    <hr>
+    <div>
+        <h5>NEW HTML5</h5>
+    </div>
+    <hr>
+    <p><span>T</span>his is my first paragraph and all the paragraphs in this page will start with a bigger font</p>
+    <p>
+        <span>M</span>y life as a web developer, has been pretty much amazing! I started
+        developing web pages when there was no CSS to be used and all formatting was done using HTML tags that currently
+        are considered deprecated or even eliminated from good web developed pages. One example of tags that have been
+        eliminated are: <span class="redspan">&lt;font&gt;, &lt;center&gt;</span>. There are some attributes that have
+        been
+        also eliminated in order to clean more the HTML code and put all the formatting (style) to CSS.
+    </p>
+    <h2>
+        Using CSS
+    </h2>
+    <p>
+        <span>W</span>hen CSS was created, the main idea was exactly to take all of these
+        formatting tags and attributes from the HTML document and transfer them to an external file that would only take
+        care of formatting the HTML page. The idea is that the HTML document should be focused on the content of the
+        page and the formatting, even layout, would be in a separated file.
+    </p>
+    <p>
+        <span>W</span>his standard has been supported and adopted world wide by W3C
+        <span class="redspan">(World Wide Web Consortium)</span> which is
+        the organization that sets the standards for web development.
+    </p>
+    <h2 class="endOfEx">
+        End of this exercise
+    </h2>
+    <p>
+        <span>A</span>t the end of this exercise, you will take all of these bad attributes and
+        formatting tags that are taking too much space in this HTML document and you will create an
+        <span class="redspan">embedded CSS</span> using the <span class="redspan">&lt;style&gt; tag </span>(of course,
+        placing this tag in the
+        appropriate section of your document). Within that style tag, you will transfer all the formatting you see in
+        this page and create appropriate CSS in order to clean the HTML document without changing the formatting that
+        this old style HTML has created!
+    </p>
+    <p>
+        <span>T</span>his a link to <a href="http://www.ccsf.edu">City College web site</a>.
+        After you visit this page, this link should be white due to the vlink attribute in the body tag. If you have
+        never visited this link, then, it will be red due to the link attribute in the body tag as well.
+    </p>
+    <h3>
+        The table showing below
+    </h3>
+    <table>
+        <tr>
+            <td><b>This table should have a cyan background color and the text is centralized within each
+                    column</b></td>
+            <td>Second column, first row</td>
+        </tr>
+        <tr>
+            <td><b>Would you please animate from cyan to green background?</b></td>
+            <td>Second column, second row</td>
+        </tr>
+        <tr>
+            <td><b>Remember to also animate the color of the font from black to white</b></td>
+            <td>Third column, third row</td>
+        </tr>
+    </table>
+</body>
+
+</html>
