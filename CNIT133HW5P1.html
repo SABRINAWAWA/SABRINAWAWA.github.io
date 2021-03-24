@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW5 Part 1</title>
+    <style>
+        .body {
+            background-color: #cbf3f0;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffbf69;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        h2 {
+            background-color: #2ec4b6;
+            border-radius: 15px;
+            margin: auto 220px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #ff9f1c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .error {
+            background-color: #ff9f1c;
+            margin-left: 10px;
+            padding: 3px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- the following script is needed for jquery validation of input -->
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".flip").click(function () {
+                $(".panel").slideToggle("slow");
+            });
+        });
+        $(document).ready(function () {
+            $("#myform").validate({
+                messages: {
+                    username: "Please enter your username",
+                    productName: "Please enter your product name",
+                    rating: "Please choose a rating",
+                    product: "Please choose at least one type of product",
+                    Store_Locations: "Please choose a store location",
+                },
+
+                errorPlacement: function (error, element) {
+                    if (element.is(":radio") || element.is(":checkbox")) {
+                        error.appendTo(element.parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW5 Part 1</h1>
+        <h2>User Feedback</h2>
+        <p>Enter Username, Product Name; choose rating, the type of product, and the location of store. Click "Submit
+            Button" to submit this form.</p>
+        <form id="myform" name="myform">
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" id="username" size="30" class="required" autofocus> </td>
+                </tr>
+
+                <tr>
+                    <td>Product Name: </td>
+                    <td><input type="text" name="productName" id="productName" size="30" class="required"> </td>
+                </tr>
+
+                <tr>
+                    <td>Rating: </td>
+                    <td><input type="radio" id="rating1" name="rating" value="Excellent" class="required">Excellent
+                        <input type="radio" id="rating2" name="rating" value="Good">Good
+                        <input type="radio" id="rating3" name="rating" value="Average">Average
+                        <input type="radio" id="rating4" name="rating" value="Poor">Poor
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Types of product: </td>
+                    <td><input type="checkbox" name="product" id="product1" value="food" class="required">Food
+                        <input type="checkbox" name="product" id="product2" value="clothes">Clothes
+                        <input type="checkbox" name="product" id="product3" value="cosmetics">Cosmetics
+                        <input type="checkbox" name="product" id="product4" value="books">Books
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Store_Locations">Store Location: </label> </td>
+                    <td>
+                        <select name="Store_Locations" id="Store_Locations" class="required">
+                            <option value="">--Choose One--</option>
+                            <option value="sf">San Francisco</option>
+                            <option value="sj">San Jose</option>
+                            <option value="okl">Oakland</option>
+                            <option value="dlc">Daly City</option>
+                            <option value="rw">Redwood City</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" id="submit_button" value="SUBMIT"></td>
+                    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 5</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW5.html">Homework 5</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW5P2.html">Homework 5 Part 2</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW5P3.html">Homework 5 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

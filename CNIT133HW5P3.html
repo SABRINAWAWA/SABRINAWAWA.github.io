@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var stateInfo = [["AL", "ALABAMA", "Montgomery", "4,903,185"], ["AK", "ALASKA", "Juneau", "731,545"], ["AZ", "ARIZONA", "Phoenix", "7,278,717"], ["AR", "ARKANSAS", "Little Rock", "3,107,825"], ["CA", "CALIFORNIA", "Sacramento", "39,512,223"], ["CO", "COLORADO", "Denver", "5,758,736"]];
+
+        function process() {
+            var searchKey = document.forms["searchform"].elements["input"].value;
+            searchKey = searchKey.toUpperCase();
+            if (searchKey.match(/^[a-zA-Z]+$/)) {
+                var found = false;
+                for (var i = 0; i < stateInfo.length; i++) {
+                    if (searchKey == stateInfo[i][0] || searchKey == stateInfo[i][1]) {
+                        document.getElementById("result").innerHTML = "Thanks for your inquiry, here is the information you requested:<br> State abbr = " + stateInfo[i][0] + "<br> State Name = " + stateInfo[i][1] + "<br> Capital =" + stateInfo[i][2] + "<br> Population = " + stateInfo[i][3];
+                        i = stateInfo.length;
+                        found = true;
+                    }
+                }
+
+                if (found == false) {
+                    document.getElementById("result").innerHTML = "The database does not have information about this state, we only have information about AL, AK, AZ, AR, CA, and CO.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Please enter a valid state name!";
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #cbf3f0;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffbf69;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        h2 {
+            background-color: #2ec4b6;
+            border-radius: 15px;
+            margin: auto 100px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #ff9f1c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .result{
+            background-color: white;
+            font-weight: bold;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW5 Part 3</h1>
+        <h2>State Population Information Check</h2>
+        <p>Enter a state name (full or just the two characters that represent the state) below and click "State Info" to
+            display State Name, State Capital, and population.</p>
+        <form name="searchform">
+            <input type="text" size="15" name="input" autofocus>
+            <input type="button" value="State Info" name="search" id="search" onclick="process();">
+        </form>
+
+        <div class="result" id="result">
+
+        </div>
+
+        <input type="reset" value="Reset" onclick="location.reload();">
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 5</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW5.html">Homework 5</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW5P1.html">Homework 5 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW5P2.html">Homework 5 Part 2</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNIT133 HW5 Part 2</title>
+
+    <script>
+        function redirectTo(myform) {
+            window.location = myform.url_list.options[myform.url_list.selectedIndex].value;
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #cbf3f0;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .onclick_event,.onchange_event,table {
+            background-color: #ffbf69;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        h2 {
+            background-color: #2ec4b6;
+            border-radius: 15px;
+            margin: auto 220px;
+        }
+        .links {
+            font-size: 13px;
+            background-color: #ff9f1c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CNIT133 HW5 Part 2</h1>
+    <h2>Website Redirection</h2>
+
+    <section class="onchange_event">
+        <form>
+            <h3>Choose Department in CCSF (Using onchange event handler)</h3>
+            <select name="url_list" id="url_list1" onchange="redirectTo(this.form);">
+                <option>--Choose Department--</option>
+                <option
+                    value="https://www.ccsf.edu/academics/schools/school-fine-applied-communication-arts/art-department">
+                    Art Department</option>
+                <option value="https://www.ccsf.edu/academics/schools/business-fashion-hospitality/business-department">
+                    Business Department</option>
+                <option value="https://www.ccsf.edu/academics/schools/stem/computer-science-department">Computer Science
+                    Department</option>
+                <option
+                    value="https://www.ccsf.edu/academics/schools/english-world-languages-and-cultures-and-communication-studies/english-department">
+                    English Department</option>
+                <option
+                    value="https://www.ccsf.edu/academics/schools/science-mathematics/engineering-and-technology-department">
+                    Engineering and Technology Department</option>
+            </select>
+        </form>
+    </section>
+
+    <section class="onclick_event">
+        <form>
+            <h3>Choose Department in CCSF (Using onclick event handler)</h3>
+            <select name="url_list" id="url_list2">
+                <option>--Choose Department--</option>
+                <option
+                    value="https://www.ccsf.edu/academics/schools/school-fine-applied-communication-arts/art-department">
+                    Art Department</option>
+                <option value="https://www.ccsf.edu/academics/schools/business-fashion-hospitality/business-department">
+                    Business Department</option>
+                <option value="https://www.ccsf.edu/academics/schools/stem/computer-science-department">Computer Science
+                    Department</option>
+                <option
+                    value="https://www.ccsf.edu/academics/schools/english-world-languages-and-cultures-and-communication-studies/english-department">
+                    English Department</option>
+                <option
+                    value="https://www.ccsf.edu/academics/schools/science-mathematics/engineering-and-technology-department">
+                    Engineering and Technology Department</option>
+            </select>
+            <input type="button" value="Go" onclick="redirectTo(this.form);">
+        </form>
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 5</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW5.html">Homework 5</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW5P1.html">Homework 5 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW5P3.html">Homework 5 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
