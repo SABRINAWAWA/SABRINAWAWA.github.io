@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This web page is for users to contact sabrina wang">
+    <title>CNIT132 Contact Form</title>
+    <link rel="icon" href="hw.png" type="icon type">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myform").validate({
+                messages: {
+                    name: "Please enter your name",
+                    email: "Please enter your email",
+                },
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                }
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: #edeec9;
+            margin: 30px;
+            padding: 15px;
+        }
+
+        .header {
+            background-color: #77bfa3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .body {
+            background-color: #bfd8bd;
+            padding: 15px;
+        }
+
+        footer {
+            background-color: #77bfa3;
+            text-align: center;
+        }
+
+        .body {
+            display: flex;
+        }
+
+        .menu {
+            background-color: #bfd8bd;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .menu>ul>li {
+            padding: 5px;
+            font-size: 15px;
+        }
+
+        a {
+            color: #2a6f97;
+            text-decoration: none;
+        }
+
+        textarea{
+            height:50px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <h1>Contact Form</h1>
+        <p>Please leave your name, email address and message here: </p>
+    </section>
+
+    <section class="body">
+        <div class="menu">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="CNIT132MOD3homepage.html">Home</a></li>
+                <li><a href="CNIT132MOD3assignment.html" target="_blank">Assignments</a></li>
+                <li><a href="../HW2/MeetUp_Report/CNIT132MEETUP.html" target="_blank">MeetUp Report</a></li>
+                <li><a href="CNIT132contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+        <form id="myform">
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" name="name" id="name" size="20" class="required" autofocus></td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="text" name="email" id="email" size="20" class="required"></td>
+                </tr>
+                <tr>
+                    <td>Leave a Message:</td>
+                    <td><textarea name="message" id="message"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="submit_button" value="SUBMIT"></td>
+                    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <footer>
+        Copyright Reserved to Huiying Sabrina Wang, 03/24/2021. <br>
+        Contact Sabrina through <a href="hwang77@ccsf.edu">hwang77@ccsf.edu</a>
+    </footer>
+</body>
+
+</html>
