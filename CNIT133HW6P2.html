@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homework 6 Part 2">
+    <title>CNIT133 HW6 Part 2</title>
+    <style>
+        .body {
+            background-color: #cbf3f0;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffbf69;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        h2 {
+            background-color: #2ec4b6;
+            border-radius: 15px;
+            margin: auto 220px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #ff9f1c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script>
+        function searchChar() {
+            var char = document.getElementById("search").value.toLowerCase().charAt(0);
+            console.log(char);
+            var text = document.getElementById("textinput").value;
+            var modifyText = text.toLowerCase()
+            console.log(text);
+            var count = 0;
+            for (var i = 0; i < modifyText.length; i++) {
+                if (modifyText.charAt(i) == char) {
+                    count++;
+                }
+            }
+
+            if (count == 0) {
+                openWindow(char);
+            } else {
+                document.getElementById("results").value = count +
+                    " occurrence(s) of '" + char + "' found";
+            }
+        }
+        function openWindow(char) {
+            var display = "Search character '" + char + "' not found in text string!";
+            var myText = "<html>\n";
+            myText += "<head>\n";
+            myText += "<title>Popup Window</title>\n";
+            myText += "</head>\n";
+            myText += "<body>\n";
+            myText += "<div style='margin:0 auto;'>\n";
+            myText += "<p>" + display + " </p>\n";
+            myText += "<input type='button' value='Close Window' onclick='window.close()'>\n";
+            myText += "</div>\n";
+            myText += "</body>\n";
+            myText += "</html>";
+            var newWindow = window.open("", "new_window",
+                "top=1,left=1,width=300,height=100");
+            newWindow.focus();
+            newWindow.document.write(myText);
+            newWindow.document.close();
+        }
+    </script>
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW6 Part 2</h1>
+        <p>Enter a search character and text to determine the number of occurrences of the search character within the text: </b></p>
+        <form id="myform" name="myform">
+            <table>
+                <tr>
+                    <td>Enter a search character: </td>
+                    <td><input type="text" name="search" id="search" size="30" class="required" autofocus></td>
+                </tr>
+
+                <tr>
+                    <td>Enter text: </td>
+                    <td> <textarea class="textinput" id="textinput" rows="5" cols="32"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="Round" onclick="searchChar()"></td>
+                    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+
+        <textarea class="results" id="results" rows="5" cols="60" readonly>
+        </textarea>
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 6</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW6.html">Homework 6</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW6P1.html">Homework 6 Part 1</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW6P3.html">Homework 6 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homework 6 Part 1">
+    <title>CNIT133 HW6 Part 1</title>
+    <style>
+        .body {
+            background-color: #cbf3f0;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffbf69;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        h2 {
+            background-color: #2ec4b6;
+            border-radius: 15px;
+            margin: auto 220px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #ff9f1c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+    </style>
+    
+    <script>
+        function roundNumber() {
+            var errMsg = "Invalid input";
+
+            if (isNaN(document.getElementById("userinput").value) || (document.getElementById("userinput").value) == "") {
+                document.getElementById("results").innerHTML = errMsg;
+            } else {
+                var num = parseFloat(document.getElementById("userinput").value);
+                var checkNum = num.toString();
+                if (checkNum.indexOf('.') != -1) {
+                    var period = checkNum.split('.');
+                    if (period[1].length >= 4) {
+                        var result =
+                            "The entered number: " + num +
+                            "\n rounded to the nearest Integer after being square rooted: " +
+                            squareRootRoundToInteger(num) +
+                            "\n rounded to the nearest tenth using toFixed: " +
+                            roundToTenthsTofixed(num) +
+                            "\n rounded to the nearest hundreds using toFixed: " +
+                            roundToHundredsTofixed(num) +
+                            "\n rounded to the nearest thousands using toFixed: " +
+                            roundToThousandsTofixed(num) +
+                            "\n rounded to the nearest integer using math round: " +
+                            roundToIntegerRound(num) +
+                            "\n rounded to the nearest integer using math floor: " +
+                            roundToIntegerFloor(num) +
+                            "\n rounded to the nearest tenth using math round: " +
+                            roundToTenthRound(num) +
+                            "\n rounded to the nearest tenth using math floor: " +
+                            roundToTenthFloor(num) +
+                            "\n rounded to the nearest hundredth using math floor: " +
+                            roundToHundredthsFloor(num) +
+                            "\n rounded to the nearest hundredth using math round: " +
+                            roundToHundredthsRound(num) +
+                            "\n rounded to the nearest thousands using math floor: " +
+                            roundToThousandsFloor(num) +
+                            "\n rounded to the nearest thousands using math round: " +
+                            roundToThousandsRound(num);
+                            document.getElementById("results").innerHTML = result;
+                    } else {
+                        document.getElementById("results").innerHTML = errMsg;
+                    }
+                } else {
+                    document.getElementById("results").innerHTML = errMsg;
+                }
+            }
+            
+        }
+
+        function squareRootRoundToInteger(number) {
+            return (Math.round(Math.sqrt(number)));
+        }
+
+        function roundToIntegerRound(number) {
+            return (Math.round(number));
+        }
+
+        function roundToIntegerFloor(number) {
+            return (Math.floor(number + .5));
+        }
+
+        function roundToTenthsTofixed(number) {
+            return (number.toFixed(1));
+        }
+
+        function roundToHundredsTofixed(number) {
+            return (number.toFixed(2));
+        }
+
+        function roundToThousandsTofixed(number) {
+            return (number.toFixed(3));
+        }
+
+        function roundToTenthFloor(number) {
+            return (Math.floor(number * 10 + .5) / 10);
+        }
+
+        function roundToTenthRound(number) {
+            return (Math.round(number * 10) / 10);
+        }
+
+        function roundToHundredthsFloor(number) {
+            return (Math.floor(number * 100 + .5) / 100);
+        }
+
+        function roundToHundredthsRound(number) {
+            return (Math.round(number * 100) / 100);
+        }
+
+        function roundToThousandsFloor(number) {
+            return (Math.floor(number * 1000 + .5) / 1000);
+        }
+
+        function roundToThousandsRound(number) {
+            return (Math.round(number * 1000) / 1000);
+        }
+    </script>
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW6 Part 1</h1>
+        <p>Enter a floating-point number with <b>AT LEAST 4 decimal positions: </b></p>
+        <form id="myform" name="myform">
+            <table>
+                <tr>
+                    <td><input type="number" name="userinput" id="userinput" size="40" class="required" autofocus> </td>
+                </tr>
+
+                <tr>
+                    <td> <input type="button" value="Round" onclick="roundNumber()"></td>
+                    <td><input type="reset" value="RESET" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+
+        <textarea class="results" id="results" rows="15" cols="60" readonly>
+        </textarea>
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 6</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW6.html">Homework 6</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW6P2.html">Homework 6 Part 2</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW6P3.html">Homework 6 Part 3</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
