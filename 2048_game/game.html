@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Four: 2048</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" charset="utf-8"></script>
+    <script>
+        function restartGame() {
+            window.location.reload();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="title-container">
+                <h1>2048</h1>
+                <p>Join the numbers and get to the 2048 tile!</p>
+            </div>
+
+            <div class="score-container">
+                <div class="score-tile">SCORE</div>
+                <span id="score">0</span>
+            </div>
+
+            <div class="highest-score">
+                <div class="score-tile">HIGHEST SCORE</div>
+                <span id="score">0</span>
+            </div>
+        </div>
+
+        <div class="grid"></div>
+
+        <div id="result"></div>
+
+        <button class="restartGame" type="button" onclick="restartGame()">Restart Game</button>
+    
+        <div class="help">
+            <p><b>Rule: </b>Use <b>arrow keys</b> to move the tiles. When two tiles with the same number touch, <b> they merge into one! </p></b></p>
+        </div>
+    </div>
+</body>
+
+</html>

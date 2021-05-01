@@ -1,0 +1,128 @@
+head,body{
+    background-color:#FBF6ED;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+    width:485px;
+    height:490px;
+    background-color: #a7968a;
+    border-radius: 5px;
+    padding:10px
+}
+
+.grid div{
+    width:100px;
+    height:100px;
+    background-color: #d1c3ba;
+    border-radius: 3px;
+    padding:5px;
+    margin: 5px;
+    font-size:50px;
+    font-weight: bold;
+    text-align: center;
+    color:#72706f;
+}
+
+.restartGame{
+    margin: 50px;
+    height:30px;
+    width:100px;
+}
+
+.top{
+    display: flex;
+    flex-direction:row;
+}
+
+.title-container{
+    display: flex;
+    flex-direction:column;
+    color:#776E65;
+}
+
+.title-container h1{
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+.title-container p{
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.65;
+    font-size: 18px;
+}
+
+.score-container{
+    float: right;
+    background: #846E5B;
+    text-align: center;
+    padding: 15px 25px;
+    font-size: 20px;
+    height:40px;
+    width:80px;
+    line-height: 20px + 22px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin-top: 8px;
+}
+
+.highest-score{
+    float: right;
+    background: #846E5B;
+    text-align: center;
+    padding: 15px 25px;
+    font-size: 20px;
+    height:55px;
+    width:80px;
+    line-height: 20px + 22px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: white;
+    margin: 8px 0 0 12px;
+}
+
+.score-tile{
+    font-size:15px;
+}
+
+span{
+    font-size:25px;
+}
+
+button{
+    background-color: #846E5B;
+    color:white;
+}
+
+.help{
+    height:50px;
+    width:500px;
+    line-height: 1.65;
+    font-size: 18px;
+    color:#776E65;
+}
+
+#result{
+    height:50px;
+    width:500px;
+    font-size: 35px;
+    color:#f67e5f;
+    font-weight: bold;
+    text-align: center;
+    margin-top:10px;
+}
