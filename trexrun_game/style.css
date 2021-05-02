@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Zen+Dots&display=swap');
+
+body{
+    background-color: #f3f1f1;
+    font-family: 'Lato', sans-serif;
+}
+
+.top{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    width:750px;
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    display:flex;
+    flex-direction: column;
+    width:400px;
+}
+
+.title h1{
+    font-size:40px;
+    color:#9d6b53;
+    font-family: 'Zen Dots', cursive;
+}
+
+.title p{
+    font-size:25px;
+    color:#9d6b53;
+}
+
+#restartGame{
+    background-color:#9d6b53;
+    font-size:25px;
+    color:#f3efec;
+}
+
+.score_container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    margin: 5px;
+    padding:8px;
+    width:300px;
+}
+
+.score{
+    text-align: center;
+    font-size:22px;
+    background-color: #8a5a44;
+    color:#f3f1f1;
+    border-radius: 5px;
+    height: 60px;
+    padding:10px 6px 6px 6px;
+}
+
+.highest-score{
+    text-align: center;
+    font-size:22px;
+    background-color: #8a5a44;
+    color:#f3f1f1;
+    border-radius: 5px;
+    height: 60px;
+    padding:10px 6px 6px 6px;
+}
+
+.game{
+    position:absolute;
+    background: url("images/bg.jpg");
+    height:200px;
+    width:1000px;
+    bottom:300px;
+    border:blank solid 3px;
+    animation: animatedBackground 6s linear infinite;
+	-moz-animation: animatedBackground 6s linear infinite;
+	-webkit-animation: animatedBackground 6s linear infinite;
+	-ms-animation: animatedBackground 6s linear infinite;
+	-o-animation: animatedBackground 6s linear infinite;
+}
+
+.dino{
+    position: absolute;
+    width:60px;
+    height:60px;
+    background: url("images/dino.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    bottom:0px;
+}
+
+
+.obstacle{
+    position:absolute;
+    width:60px;
+    height:60px;
+    background-image:url("images/cactus.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    bottom:0px;
+}
+
+.cloud{
+    position:absolute;
+    width:60px;
+    height:60px;
+    background-image:url("images/cloud.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    bottom:200px;
+    z-index: 10;
+}
+
+.result{
+    color:#e76f51;
+    font-size:40px;
+    text-align: center;
+}
+
+@keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -300px 0; }
+}
+@-moz-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -300px 0; }
+}
+@-webkit-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -300px 0; }
+}
+@-ms-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -300px 0; }
+}
+@-o-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: -300px 0; }
+}
