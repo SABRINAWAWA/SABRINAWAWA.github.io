@@ -1,0 +1,131 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:18 px;
+}
+
+.grid{
+    width:400px;
+    height:600px;
+    background:url("images/background.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    position:relative;
+}
+
+.doodler{
+    width:60px;
+    height: 85px;
+    background:url("images/doodler.png");
+    background-repeat:no-repeat;
+    background-size: 60px 85px;
+    background-position: center;
+    position:absolute;
+}
+
+.platform{
+    width:85px;
+    height:15px;
+    background:url("images/platform.png");
+    background-repeat:no-repeat;
+    background-size: 85px 15px;
+    background-position: center;
+    position: absolute;
+}
+
+.top{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rule{
+    text-align: left;
+    color:#9c6644;
+}
+
+.title{
+    color:#9c6644;
+}
+
+.score_container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color:#9c6644;
+    color:#ede0d4;
+    height:auto;
+    width: 380px;
+    border-radius:10px;
+    margin: 10px;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.score{
+    font-size: 18px;
+    background-color: #ede0d4;
+    color:#7f5539;
+    padding:15px;
+    height:30px;
+    width: auto;
+    border-radius:10px;
+}
+
+.highestScore{
+    font-size: 18px;
+    background-color: #ede0d4;
+    color:#7f5539;
+    padding:15px;
+    height:30px;
+    width: auto;
+    border-radius:10px;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.start{
+    background-color: #ede0d4;
+    color:#9c6644;
+    font-size:15px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    visibility: visible;
+}
+
+.start:hover{
+    background-color:#53a52d;
+    color:#f1efe3;
+}
+
+.restart{
+    background-color: #ede0d4;
+    visibility: hidden;
+    color:#9c6644;
+    font-size:15px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.restart:hover{
+    background-color:#6dd83b;
+    color:#6b5c08;
+}
+
+.result{
+    font-size:28px;
+    font-weight: 600;
+    height: 20px;
+    color:#d90429;
+}
