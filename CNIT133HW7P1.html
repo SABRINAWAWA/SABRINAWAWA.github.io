@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homework 7 Part 1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Itim&family=Krona+One&family=Nunito:ital,wght@1,300;1,600;1,800&family=Reggae+One&display=swap"
+        rel="stylesheet">
+    <title>CNIT133 HW7 Part 1</title>
+    <style>
+        .body {
+            background-color: #cbf3f0;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffbf69;
+            width: 550px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        #mytable {
+            background-color: #ffbf69;
+            width: 600px;
+            height: 600px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #ffa01c9c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: yellowgreen;
+        }
+
+        .blue {
+            background-color: rgb(0, 204, 255);
+        }
+
+        .yellow {
+            background-color: yellow
+        }
+
+        .small {
+            font-size: 10px;
+        }
+
+        .medium {
+            font-size: 16px;
+        }
+
+        .large {
+            font-size: 22px;
+        }
+
+        .extra_large {
+            font-size: 30px;
+        }
+
+        .flower {
+            background-image: url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+        }
+
+        .dog {
+            background-image: url("https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=632&q=80");
+        }
+
+        .cat {
+            background-image: url("https://images.unsplash.com/photo-1541188495357-ad2dc89487f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+        }
+
+        .sky {
+            background-image: url("https://images.unsplash.com/photo-1463947628408-f8581a2f4aca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+        }
+
+        .red_text {
+            color: red;
+        }
+
+        .green_text {
+            color: green;
+        }
+
+        .blue_text {
+            color: aqua;
+        }
+
+        .brown_text {
+            color: rgb(141, 53, 53);
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .upper {
+            text-transform: uppercase;
+        }
+    </style>
+
+    <script>
+        function changeBackground(choice) {
+            var body = document.getElementById("fullBody");
+            if (choice == 0) {
+                body.className = "red"
+            } else if (choice == 1) {
+                body.className = "green"
+            } else if (choice == 2) {
+                body.className = "blue"
+            } else {
+                body.className = "yellow"
+            }
+        }
+
+        function changeTextSize(choice) {
+            var form = document.getElementById("myform");
+            if (choice == 0) {
+                form.className = "small"
+            } else if (choice == 1) {
+                form.className = "medium"
+            } else if (choice == 2) {
+                form.className = "large"
+            } else {
+                form.className = "extra_large"
+            }
+        }
+
+        function selectTableBackground(choice) {
+            var table = document.getElementById("mytable");
+            var background = document.getElementById("chooseBackground").value;
+            if (background == "flower") {
+                table.classList.add("flower")
+                table.classList.remove("dog", "cat", "sky")
+            } else if (background == "dog") {
+                table.classList.add("dog")
+                table.classList.remove("flower", "cat", "sky")
+            } else if (background == "cat") {
+                table.classList.add("cat")
+                table.classList.remove("dog", "flower", "sky")
+            } else {
+                table.classList.add("sky")
+                table.classList.remove("dog", "cat", "flower")
+            }
+        }
+
+        function selectTextColor() {
+            var table = document.getElementById("mytable");
+            var textColor = document.getElementById("chooseTextColor").value;
+            if (textColor == "red") {
+                table.classList.add("red_text")
+                table.classList.remove("green_text", "blue_text", "brown_text")
+            } else if (textColor == "green") {
+                table.classList.add("green_text")
+                table.classList.remove("red_text", "blue_text", "brown_text")
+            } else if (textColor == "blue") {
+                table.classList.add("blue_text")
+                table.classList.remove("green_text", "red_text", "brown_text")
+            } else {
+                table.classList.add("brown_text")
+                table.classList.remove("green_text", "blue_text", "red_text")
+            }
+        }
+
+        function changeFontStyle(choice) {
+            var table = document.getElementById("mytable");
+            if (choice == 0) {
+                table.classList.add("italic")
+            } else if (choice == 1) {
+                table.classList.add("bold")
+            } else if (choice == 2) {
+                table.classList.add("upper")
+            }
+
+            if (document.getElementById("fontstyle1").checked == false) {
+                table.classList.remove("italic")
+            }
+            if (document.getElementById("fontstyle2").checked == false) {
+                table.classList.remove("bold")
+            }
+            if (document.getElementById("fontstyle3").checked == false) {
+                table.classList.remove("upper")
+            }
+        }
+    </script>
+
+</head>
+
+<body id="fullBody">
+    <section class="body">
+        <h1>CNIT133 HW7 Part 1</h1>
+        <p>Customize the Font and Background </b></p>
+        <form id="myform" name="myform">
+            <table id="mytable" name="mytable">
+                <tr>
+                    <td>Choose background color: </td>
+                    <td><input type="radio" name="style" onclick="changeBackground(0)">Red</td>
+                    <td><input type="radio" name="style" onclick="changeBackground(1)">Green</td>
+                    <td><input type="radio" name="style" onclick="changeBackground(2)">Blue</td>
+                    <td><input type="radio" name="style" onclick="changeBackground(3)">Yellow</td>
+
+                </tr>
+
+                <tr>
+                    <td>Choose size of the text: </td>
+                    <td><input type="radio" name="size" onclick="changeTextSize(0)">Small</td>
+                    <td><input type="radio" name="size" onclick="changeTextSize(1)">Medium</td>
+                    <td><input type="radio" name="size" onclick="changeTextSize(2)">Large</td>
+                    <td><input type="radio" name="size" onclick="changeTextSize(3)">Extra Large</td>
+                </tr>
+
+                <tr>
+                    <td>Choose font style of the text: </td>
+                    <td><input type="checkbox" name="fontStyle" id="fontstyle1" onclick="changeFontStyle(0)">Italic</td>
+                    <td><input type="checkbox" name="fontStyle" id="fontstyle2" onclick="changeFontStyle(1)">Bold</td>
+                    <td><input type="checkbox" name="fontStyle" id="fontstyle3" onclick="changeFontStyle(2)">Uppercase
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Choose Background Image of this Table: <br>
+                        <select name="chooseBackground" id="chooseBackground" onchange="selectTableBackground()">
+                            <option value="#">---Select Background Image---</option>
+                            <option value="flower">Flower</option>
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="sky">Sky</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">Choose Text Color of this Table: <br>
+                        <select name="chooseTextColor" id="chooseTextColor" onchange="selectTextColor()">
+                            <option value="#">---Select Text Color---</option>
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="brown">Brown</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="reset" value="Revert to original" onclick="window.location.reload();"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 7</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW7.html">Homework 7</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW7P2.html">Homework 7 Part 2</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>

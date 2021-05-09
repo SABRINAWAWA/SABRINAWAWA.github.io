@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homework 7 Part 2">
+    <title>CNIT133 HW7 Part 2</title>
+    <style>
+        .body {
+            background-color: #cbf3f0;
+            height: 250px;
+            text-align: center;
+        }
+
+        table {
+            background-color: #ffbf69;
+            width: 500px;
+            margin: 20px auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            background-color: #ff9f1c;
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        .links {
+            font-size: 13px;
+            background-color: #ff9f1c;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.5rem;
+        }
+
+        .links td {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 0.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        p {
+            background-color: white;
+            margin: 10px 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .wrapper {
+            width: 800px;
+            margin: 0px auto;
+            text-align: left;
+        }
+
+        .navigation ul,
+        .navigation li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .navigation a {
+            background-color: #ffbf69;
+            text-decoration: none;
+            text-indent: 25px;
+            border-top: 1px solid #ffbf69;
+            border-left: 1px solid #ffbf69;
+            border-right: 1px solid #ff9f1c;
+            border-bottom: 1px solid #ff9f1c;
+            margin: 0px;
+            padding: 0px;
+            color: rgb(53, 75, 118);
+        }
+
+        .navigation a:hover {
+            background-color: #2ec4b6;
+            border-top: 1px solid #ff9f1c;
+            border-left: 1px solid #ff9f1c;
+            border-right: 1px solid #ffbf69;
+            border-bottom: 1px solid #ffbf69;
+            color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="miscex3.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".navigation").navPlugin(
+                {
+                    'itemWidth': 180,
+                    'itemHeight': 30,
+                    'navEffect': "slide",
+                    'speed': 250
+                });
+        });
+    </script>
+
+</head>
+
+<body>
+    <section class="body">
+        <h1>CNIT133 HW7 Part 2</h1>
+        <p>Nav Bar </b></p>
+        <div class="wrapper">
+            <ul class="navigation">
+                <li><a href="CNIT133HW1.html">Homework 1</a></li>
+                <li><a href="CNIT133HW2.html">Homework 2</a>
+                    <ul>
+                        <li><a href="CNIT133HW2P1.html">Part 1</a> </li>
+                        <li><a href="CNIT133HW2P2.html">Part 2</a> </li>
+                        <li><a href="CNIT133HW2P3.html">Part 3</a> </li>
+                        <li><a href="CNIT133HW2P4.html">Part 4</a> </li>
+                    </ul>
+                </li>
+                <li><a href="CNIT133HW3.html">Homework 3</a>
+                    <ul>
+                        <li><a href="CNIT133HW3P1.html">Part 1</a> </li>
+                        <li><a href="CNIT133HW3P2.html">Part 2</a> </li>
+                        <li><a href="CNIT133HW3P3.html">Part 3</a> </li>
+                        <li><a href="CNIT133HW3P4.html">Part 4</a> </li>
+                    </ul>
+                </li>
+                <li><a href="CNIT133HW4.html">Homework 4</a>
+                    <ul>
+                        <li><a href="CNIT133HW4P1.html">Part 1</a> </li>
+                        <li><a href="CNIT133HW4P2.html">Part 2</a> </li>
+                        <li><a href="CNIT133HW4P3.html">Part 3</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="links">
+        <h3>Links To Other Parts of Homework 7</h3>
+        <table style="width: 100%;">
+            <tr style="width: 100%;">
+                <td style="width: 25%;"><a href="CNIT133HW7.html">Homework 7</a></td>
+                <td style="width: 25%;"><a href="CNIT133HW7P1.html">Homework 7 Part 1</a></td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+</html>
