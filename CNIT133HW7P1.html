@@ -235,9 +235,9 @@
 <body id="fullBody">
     <section class="body">
         <h1>CNIT133 HW7 Part 1</h1>
-        <p>Customize the Font and Background </b></p>
+        <p>Customize the Font and Background</p>
         <form id="myform" name="myform">
-            <table id="mytable" name="mytable">
+            <table id="mytable">
                 <tr>
                     <td>Choose background color: </td>
                     <td><input type="radio" name="style" onclick="changeBackground(0)">Red</td>
@@ -256,7 +256,7 @@
                 </tr>
 
                 <tr>
-                    <td>Choose font style of the text: </td>
+                    <td colspan="2">Choose font style of the text: </td>
                     <td><input type="checkbox" name="fontStyle" id="fontstyle1" onclick="changeFontStyle(0)">Italic</td>
                     <td><input type="checkbox" name="fontStyle" id="fontstyle2" onclick="changeFontStyle(1)">Bold</td>
                     <td><input type="checkbox" name="fontStyle" id="fontstyle3" onclick="changeFontStyle(2)">Uppercase
@@ -273,9 +273,7 @@
                             <option value="sky">Sky</option>
                         </select>
                     </td>
-                </tr>
 
-                <tr>
                     <td colspan="2">Choose Text Color of this Table: <br>
                         <select name="chooseTextColor" id="chooseTextColor" onchange="selectTextColor()">
                             <option value="#">---Select Text Color---</option>
@@ -286,11 +284,8 @@
                         </select>
                     </td>
                 </tr>
-
-                <tr>
-                    <td><input type="reset" value="Revert to original" onclick="window.location.reload();"></td>
-                </tr>
             </table>
+            <input type="reset" value="Revert to original" onclick="window.location.reload();">
         </form>
     </section>
 
