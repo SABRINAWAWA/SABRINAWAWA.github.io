@@ -6,21 +6,25 @@
     <li> CNIT132: Intermediate HTML and CSS </li>
     <li> CNIT133: JavaScript, jQuery, AJAX </li>
     </ul>
-2. Personal Mini Projects:
-    a. Vanilla JavaScript Web Games
-      (1). 2048
-      (2). Rock-Paper-Scissors 
-      (3). Doodle Jump
-      (4). Greedy Snake
-      (5). Minesweeper
-      (6). Pacman
-      (7). Tic-Tac-Toe
-      (8). Trexrun
-3. Website Projects:
-  a. Cake-Design Store Website
-  b. Design Toothbrush Project Showcase Website
-  c. Dublin Hotel Website
-  d. FirstStepToCollege Agency Website
-  e. Flower Store Website
-  f. Travel-to-China Agency Website
-  g. Sabrina's Portfolio Website
+<li> Personal Mini Projects: Vanilla JavaScript Web Games</li>
+    <ul>
+      <li> 2048 </li>
+      <li> Rock-Paper-Scissors </li>
+      <li> Doodle Jump </li>
+      <li> Greedy Snake </li>
+      <li> Minesweeper </li>
+      <li> Pacman <li>
+      <li> Tic-Tac-Toe </li>
+      <li> Trexrun </li>
+    </ul>
+<li> Website Projects: </li>
+    <ul>
+      <li> Cake-Design Store Website </li>
+      <li> Design Toothbrush Project Showcase Website </li>
+      <li> Dublin Hotel Website </li>
+      <li> FirstStepToCollege Agency Website </li>
+      <li> Flower Store Website </li>
+      <li> Travel-to-China Agency Website </li>
+      <li> Sabrina's Portfolio Website </li>
+    </ul>
+</ol>
