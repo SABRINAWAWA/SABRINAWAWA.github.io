@@ -1,8 +1,24 @@
 # SABRINAWAWA.github.io
-CCSF CNIT CLASSES
 
-include 
-1. CNIT132: Module 1 - Homework B;
-2. CNIT133: Homework 1-8;
-  a. Homework 1: CNIT133HW1.html
-  b. Homework 2: CNIT133HW2.html, CNIT133HW2P1.html, CNIT133HW2P2.html, CNIT133HW2P3.html, CNIT133HW2P4.html
+Includes 
+1. City College of San Francisco Classes:
+    a. CNIT132: Intermediate HTML and CSS
+    b. CNIT133: JavaScript, jQuery, AJAX
+2. Personal Mini Projects:
+    a. Vanilla JavaScript Web Games
+      (1). 2048
+      (2). Rock-Paper-Scissors 
+      (3). Doodle Jump
+      (4). Greedy Snake
+      (5). Minesweeper
+      (6). Pacman
+      (7). Tic-Tac-Toe
+      (8). Trexrun
+3. Website Projects:
+  a. Cake-Design Store Website
+  b. Design Toothbrush Project Showcase Website
+  c. Dublin Hotel Website
+  d. FirstStepToCollege Agency Website
+  e. Flower Store Website
+  f. Travel-to-China Agency Website
+  g. Sabrina's Portfolio Website
