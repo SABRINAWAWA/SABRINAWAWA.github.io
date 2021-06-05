@@ -1,9 +1,11 @@
 # SABRINAWAWA.github.io
-
-Includes 
-1. City College of San Francisco Classes:
-    a. CNIT132: Intermediate HTML and CSS
-    b. CNIT133: JavaScript, jQuery, AJAX
+<h2 style="display: inline-block">Table of Contents</h2>
+<ol>
+    <li>City College of San Francisco Classes:</li>
+    <ul>
+    <li> CNIT132: Intermediate HTML and CSS </li>
+    <li> CNIT133: JavaScript, jQuery, AJAX </li>
+    </ul>
 2. Personal Mini Projects:
     a. Vanilla JavaScript Web Games
       (1). 2048
