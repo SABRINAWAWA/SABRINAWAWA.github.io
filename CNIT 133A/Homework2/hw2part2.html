@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Working with Grids</title>
+    <meta charset="utf-8">
+    <meta name="description" content="working with grids in CNIT 132A">
+
+    <style>
+        .page-layout {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title,
+        .aside1,
+        .article,
+        .challenge,
+        .aside2,
+        .footer {
+            font-weight: bold;
+        }
+
+        .main{
+            display:flex;
+            flex-direction: row;
+            flex-wrap:nowrap;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .main>div{
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .aside1, 
+        .aside2{
+            text-align: center;
+            width:23%;
+        }
+
+        .challenge,.article{
+            width:27%
+        }
+
+        .title {
+            background-color: rgb(241, 112, 25);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .aside1 {
+            background-color: yellow;
+        }
+
+        .article {
+            background-color: rgb(0, 26, 255);
+            color: white;
+        }
+
+        .challenge {
+            background-color: rgb(247, 128, 211);
+            color:blue;
+        }
+
+        .aside2{
+            background-color: pink;
+        }
+        
+        .footer{
+            background-color: rgb(86, 243, 191);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-layout">
+        <div class="title">Name of Company</div>
+        <div class="main">
+            <div class="aside1">This is the aside 1</div>
+            <div class="article"> <p>
+                This is the main article of my page! This is the main content of the page.
+                In a 3-column layout, it should be shown in the middle between the aside 1 and aside 2!</p>
+            </div>
+            <div class="challenge"><p>This column was created to have some content as a challenge to adapt the old
+                3-column layout to a 4-column layout.</p>
+            </div>
+            <div class="aside2"> This is the aside 2</div>
+        </div>
+        <div class="footer"><p>This is the footer<br>Copyright &copy 2017</p></div>
+    </div>
+</body>
+
+</html>
