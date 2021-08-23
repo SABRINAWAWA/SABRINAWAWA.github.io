@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');*{margin:0;padding:0}body{background-color:#cad2c5;margin-bottom:30px;margin-left:30px;margin-right:30px}.navbar{background-color:#386641;height:50px;width:100%;padding-top:15px;padding-bottom:15px}nav>ul>li>a{font-size:18px;text-decoration:none;color:black;margin:10px;padding:5px;display:block}.active{color:#f5cb5c;font-weight:bold}.logo{float:left;position:relative;color:#f5cb5c;font-size:24px;font-family:Satisfy,sans-serif;margin-left:20px;margin-top:8pt;margin-bottom:8pt;margin-right:8pt;display:block}nav{float:right;text-align:center;margin:0;overflow:hidden}nav ul{margin:0;padding:0}nav ul li{display:inline-block;list-style-type:none}.main{background-color:#f2e8cf;padding:20px;height:1000px}.title{text-align:center;margin:auto;padding:15px;background-color:#f5cb5c;border-radius:30px;width:500px}.footer{background-color:#386641;color:#f5cb5c;padding:20px;text-align:center}
+@import url(https://fonts.googleapis.com/css2?family=Reggae+One&display=swap);@import url(https://fonts.googleapis.com/css2?family=Satisfy&display=swap);*{margin:0;padding:0}body{background-color:#cad2c5;margin-bottom:30px;margin-left:30px;margin-right:30px}.navbar{background-color:#386641;height:50px;width:100%;padding-top:15px;padding-bottom:15px}nav>ul>li>a{font-size:18px;text-decoration:none;color:#000;margin:10px;padding:5px;display:block}.active{color:#f5cb5c;font-weight:700}.logo{float:left;position:relative;color:#f5cb5c;font-size:24px;font-family:Satisfy,sans-serif;margin-left:20px;margin-top:8pt;margin-bottom:8pt;margin-right:8pt;display:block}nav{float:right;text-align:center;margin:0;overflow:hidden}nav ul{margin:0;padding:0}nav ul li{display:inline-block;list-style-type:none}.main{background-color:#f2e8cf;padding:20px;height:1000px}.title{text-align:center;margin:auto;padding:15px;background-color:#f5cb5c;border-radius:30px;width:500px}.footer{background-color:#386641;color:#f5cb5c;padding:20px;text-align:center}.homework{width:800px;margin-top:15px;margin-bottom:15px;margin-left:auto;margin-right:auto;padding:10px;border:#386641 3px solid;border-radius:30px;background-color:#a7c957;text-align:center}.buttonset>a{text-decoration:none;color:#386641;padding:20px;font-weight:700}.due{color:red;font-size:14px}
 /*
+
 @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
@@ -84,5 +85,30 @@ nav ul li{
     color: #f5cb5c;
     padding: 20px;
     text-align: center;
+}
+
+.homework{
+    width:800px;
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-left:auto; 
+    margin-right: auto;
+    padding: 10px;
+    border: #386641 3px solid;
+    border-radius: 30px;
+    background-color: #a7c957;
+    text-align: center;
+}
+
+.buttonset>a{
+    text-decoration:none;
+    color:#386641;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.due{
+    color:red;
+    font-size: 14px;;
 }
 */
