@@ -87,8 +87,8 @@ a{
 }
 
 #project_img{
-    height: 250px;
-    width: 300px;
+    height: 350px;
+    width: 500px;
     border-radius: 20px;
     display: block;
     margin: 15px auto;
@@ -129,4 +129,10 @@ footer{
     background-color: #77bfa3;
     padding: 20px;
     text-align: center;
+}
+
+button{
+    margin:10px auto;
+    display: block;
+    margin: 15px auto;
 }
