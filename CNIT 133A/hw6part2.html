@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Shapes</title>
+    <meta name="description" content="airplane flying with CSS3 animation">
+    <meta charset="utf-8">
+    <style>
+        body {
+            font: 1.2em Helvetica, Arial, sans-serif;
+            background-color: beige;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 10px auto;
+            margin-left: 25%
+        }
+
+        .drop {
+            float: left;
+            shape-outside: url(house.png);
+            shape-margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Homework 6 - CSS Shapes</h1>
+    <section class="content">
+        <img src="house.png" alt="A house" class="drop">
+
+        <p>CSS animations make it possible to animate transitions from one CSS style configuration to another.
+            Animations consist of two components, a style describing the CSS animation and a set of keyframes that
+            indicate the start and end states of the animation’s style, as well as possible intermediate waypoints.</p>
+        <p>To create a CSS animation sequence, you style the element you want to animate with the animation property or
+            its sub-properties. This lets you configure the timing, duration, and other details of how the animation
+            sequence should progress</p>
+    </section>
+</body>
+
+</html>
