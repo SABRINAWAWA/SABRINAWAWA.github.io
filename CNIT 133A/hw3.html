@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="D3 homework">
+  <title>D3 Homework</title>
+  <script src="d3minv6.js"></script>
+  <style>
+    #chart rect {
+      fill: #4aaeea;
+    }
+
+    #chart text {
+      fill: black;
+      font: 10px sans-serif;
+      text-anchor: end;
+    }
+
+    .axis text {
+      font: 10px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;
+    }
+
+    body {
+      background: #1a1a1a;
+      color: #eaeaea;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>D3 Homework</h2>
+  <div id="chart"></div>
+</body>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+
+  var students = [];
+  var terms = [];
+  var datahw3 = [];
+
+  var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+  var height = 400 - margin.top - margin.bottom,
+    width = 600 - margin.left - margin.right,
+    barW = 50, barSpace = 5;
+
+  d3.json("hw3data.json", function (data) {
+    datahw3 = data;
+
+    var tooltip = d3.select('body').append('div')
+      .style('position', 'absolute')
+      .style('padding', '0 10px')
+      .style('background', 'white')
+      .style('opacity', 0)
+      .style('border', '5px solid black')
+      .style('color', 'black');
+
+    var mycolors = d3.scaleLinear()
+      .domain([0, 4])
+      .range(['#4aaeea']);
+
+    var verticalGuide = d3.scaleLinear()
+      .domain([0, d3.max(datahw3, d => d.students)])
+      .range([height, 0]);
+
+    var yS = d3.scaleLinear()
+      .domain([0, d3.max(datahw3, d => d.students)])
+      .range([0, height]);
+
+    var xS = d3.scaleBand()
+      .domain(datahw3.map(d => d.term))
+      .range([0, width])
+      .padding(0.3);
+
+    var graph = d3.select('#chart')
+      .append('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .style('background', '#eaeaea')
+      .append('g')
+      .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+
+    graph.selectAll('rect')
+      .data(data)
+      .enter()
+      .append('rect')
+      .style('fill', function (d, i) { return mycolors(i) })
+      .attr('width', xS.bandwidth)
+      .attr('height', d => yS(d.students))
+      .attr('x', d => xS(d.term))
+      .attr('y', d => height - yS(d.students))
+      .on('mouseover', function (event, d) {
+        const [x, y] = d3.pointer(event)
+        tooltip.transition()
+          .style('opacity', .8)
+        tooltip.html(d)
+          .style('left', (d3.event.pageX - 34) + 'px')
+          .style('top', (d3.event.pageY - 12) + 'px')
+          .text("Term - " + data[d].term + "; Student - " + data[d].students)
+        d3.select(this)
+          .style('opacity', .4)
+      })
+      .on('mousemove', function (event, d) {
+        tooltip.html(d)
+          .style('left', (d3.event.pageX - 34) + 'px')
+          .style('top', (d3.event.pageY - 12) + 'px')
+          .text("Term - " + data[d].term + "; Student - " + data[d].students)
+      })
+      .on('mouseout', function (event, d) {
+        d3.select(this)
+          .style("opacity", 1);
+      });
+
+    graph.append('g')
+      .call(d3.axisLeft(yS).scale(verticalGuide));
+
+    graph.append('g')
+      .call(d3.axisBottom(xS))
+      .attr('transform', 'translate(0, ' + height + ')');
+
+  })
+</script>
