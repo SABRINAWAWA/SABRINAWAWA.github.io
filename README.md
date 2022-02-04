@@ -5,6 +5,7 @@
     <ul>
         <li> <a href="https://sabrinawawa.github.io/CNIT132/Final%20Project/CNIT132MOD3homepage.html"> CNIT132: Intermediate HTML and CSS </a> </li>
         <li> <a href="https://sabrinawawa.github.io/CNIT133HW1.html"> CNIT133: JavaScript, jQuery, AJAX </a> </li>
+        <li> <a href="https://sabrinawawa.github.io/CNIT133I.html"> CNIT133I: JavaScript for IoT and XR</a> </li>
     </ul>
 <li> Personal Mini Projects: Vanilla JavaScript Web Games</li>
     <ul>
