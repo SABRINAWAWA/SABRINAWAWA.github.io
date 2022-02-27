@@ -30,7 +30,6 @@ AFRAME.registerComponent('cylinder-rotation', {
                     z: 360,
                 },
                 loop: true,
-                easing:"ease-in",
             };
             el.setAttribute('animation__rotate', params);
         }
