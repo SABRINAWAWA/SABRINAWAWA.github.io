@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework 3 - VR Assignment</title>
+    <meta charset="utf-8">
+    <meta name="description" content="HTML For CNIT 133I, Assignment 3">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="HW3.js"> </script>
+</head>
+
+<body cursor="rayOrigin: mouse">
+    <a-scene>
+        <a-assets>
+            <img src="sky.jpeg" id="sky">
+            <img scr="sun.webp" id="ball">
+            <img scr="tree.jpeg" id="tree">
+        </a-assets>
+
+        <a-entity id="dolly">
+            <a-entity camera position="0 2 0" look-controls wasd-controls>
+                <a-cursor id="cursor" raycaster fuse="true" fusetimeout="3000"></a-cursor>
+            </a-entity>
+        </a-entity>
+
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="5" height="5" src="crystal.webp"></a-plane>
+        <a-sky src="#sky"></a-sky>
+        <a-sphere position="-1 0.75 -3" color="pink" shadow color-toggle moving></a-sphere>
+        <a-cylinder position="2 1 -3" radius="1" heigh="3" src="wave.jpeg" cylinder-rotation></a-cylinder>
+    </a-scene>
+</body>
+
+</html>
